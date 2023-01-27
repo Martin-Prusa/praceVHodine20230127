@@ -1,2 +1,5 @@
-cz/martin/repositories/CountriesRepository.class
-cz/martin/services/CountriesService.class
+cz/martin/beans/UniversitiesBean.class
+cz/martin/models/UniversitiesCount.class
+cz/martin/services/UniversitiesService.class
+cz/martin/repositories/UniversitiesRepository.class
+cz/martin/models/University.class

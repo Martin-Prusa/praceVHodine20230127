@@ -8,10 +8,33 @@
 <ui:composition template="fragments/template.xhtml">
     <ui:define name="content">
         <h:form>
-            <ui:repeat value="#{countriesService.counties}" var="c">
-                <h:commandButton value="#{c}" styleClass="m-1 btn btn-primary"/>
+            <h:commandButton value="All" action="#{universitiesBean.c('')}" styleClass="m-1 btn btn-primary"/>
+            <ui:repeat value="#{universitiesService.counties}" var="c">
+                <h:commandButton value="#{c.country} (#{c.count})" action="#{universitiesBean.c(c.country)}" styleClass="m-1 btn btn-primary"/>
             </ui:repeat>
         </h:form>
+
+        <h2 class="m-3">Universities</h2>
+        <table class="table m-4">
+            <thead>
+            <tr>
+                <th scope="col">University</th>
+                <th scope="col">Country</th>
+                <th scope="col">Students</th>
+                <th scope="col">Teachers</th>
+            </tr>
+            </thead>
+            <tbody>
+            <ui:repeat value="#{universitiesBean.universities}" var="u">
+                <tr>
+                    <td>#{u.university}</td>
+                    <td>#{u.country}</td>
+                    <td>#{u.students}</td>
+                    <td>#{u.teachers}</td>
+                </tr>
+            </ui:repeat>
+            </tbody>
+        </table>
     </ui:define>
 </ui:composition>
 </html>
