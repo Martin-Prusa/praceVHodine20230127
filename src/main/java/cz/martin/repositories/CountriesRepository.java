@@ -23,7 +23,7 @@ public class CountriesRepository {
                 """)
                 ) {
             while (resultSet.next()) {
-                countries.add(resultSet.getString(0));
+                countries.add(resultSet.getString(1));
             }
 
         } catch (SQLException e) {
